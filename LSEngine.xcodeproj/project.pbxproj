@@ -13,6 +13,8 @@
 		2F6EE79C265126FA00397AC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6EE79A265126FA00397AC9 /* Main.storyboard */; };
 		2F6EE7A8265126FA00397AC9 /* LSEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7A7265126FA00397AC9 /* LSEngineTests.swift */; };
 		2F6EE7B3265126FA00397AC9 /* LSEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7B2265126FA00397AC9 /* LSEngineUITests.swift */; };
+		2F6EE7C22651298600397AC9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7C12651298600397AC9 /* GameView.swift */; };
+		2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7C326512D7600397AC9 /* LSShader.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		2F6EE7AE265126FA00397AC9 /* LSEngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSEngineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6EE7B2265126FA00397AC9 /* LSEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSEngineUITests.swift; sourceTree = "<group>"; };
 		2F6EE7B4265126FA00397AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F6EE7C12651298600397AC9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		2F6EE7C326512D7600397AC9 /* LSShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LSShader.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			children = (
 				2F6EE7C02651286100397AC9 /* App */,
 				2F6EE79A265126FA00397AC9 /* Main.storyboard */,
+				2F6EE7C12651298600397AC9 /* GameView.swift */,
+				2F6EE7C326512D7600397AC9 /* LSShader.metal */,
 			);
 			path = LSEngine;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6EE797265126F900397AC9 /* LSEngine.xcdatamodeld in Sources */,
+				2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */,
+				2F6EE7C22651298600397AC9 /* GameView.swift in Sources */,
 				2F6EE792265126F900397AC9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
