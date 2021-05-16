@@ -13,6 +13,8 @@ class GameView: MTKView {
 
     private let logger = Logger()
 
+    private let renderer = Renderer()
+
     required init(coder: NSCoder) {
 
         super.init(coder: coder)
@@ -25,24 +27,6 @@ class GameView: MTKView {
 
         colorPixelFormat = Preferences.shared.mainPixelFormat
 
-    }
-
-    override func draw(_ dirtyRect: NSRect) {
-
-        guard let drawable = currentDrawable, let renderPassDescriptor = currentRenderPassDescriptor else {
-            return
-        }
-
-        let commandBuffer = Engine.shared.commandQueue.makeCommandBuffer()
-
-        let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-
-        Triangle().render(with: renderCommandEncoder!)
-
-        renderCommandEncoder?.endEncoding()
-
-        commandBuffer?.present(drawable)
-
-        commandBuffer?.commit()
+        delegate = renderer
     }
 }

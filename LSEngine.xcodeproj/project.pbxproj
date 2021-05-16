@@ -23,6 +23,7 @@
 		2F6EE7D42651585300397AC9 /* RenderPipelineDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D32651585300397AC9 /* RenderPipelineDescriptorLibrary.swift */; };
 		2F6EE7D626515A2F00397AC9 /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D526515A2F00397AC9 /* RenderPipelineStateLibrary.swift */; };
 		2F6EE7D926515E5700397AC9 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D826515E5700397AC9 /* Object.swift */; };
+		2F6EE7DB2651619200397AC9 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7DA2651619200397AC9 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		2F6EE7D32651585300397AC9 /* RenderPipelineDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorLibrary.swift; sourceTree = "<group>"; };
 		2F6EE7D526515A2F00397AC9 /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
 		2F6EE7D826515E5700397AC9 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		2F6EE7DA2651619200397AC9 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				2F6EE7C12651298600397AC9 /* GameView.swift */,
 				2F6EE79A265126FA00397AC9 /* Main.storyboard */,
+				2F6EE7DA2651619200397AC9 /* Renderer.swift */,
 			);
 			path = Display;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				2F6EE797265126F900397AC9 /* LSEngine.xcdatamodeld in Sources */,
 				2F6EE7CE26514E6400397AC9 /* Preferences.swift in Sources */,
 				2F6EE7D02651500000397AC9 /* ShaderLibrary.swift in Sources */,
+				2F6EE7DB2651619200397AC9 /* Renderer.swift in Sources */,
 				2F6EE7CC26514DA100397AC9 /* Engine.swift in Sources */,
 				2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */,
 				2F6EE7C22651298600397AC9 /* GameView.swift in Sources */,
