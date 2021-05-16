@@ -10,12 +10,6 @@ import MetalKit
 import os.log
 import simd
 
-struct Vertex {
-
-    let position: SIMD3<Float>
-    let color: SIMD4<Float>
-}
-
 class GameView: MTKView {
 
     private let logger = Logger()
@@ -52,7 +46,7 @@ class GameView: MTKView {
     private func makeBuffers() {
 
         vertexBuffer = device?.makeBuffer(bytes: vertices,
-                                          length: MemoryLayout<Vertex>.stride * vertices.count,
+                                          length: Vertex.stride(of: vertices.count),
                                           options: [])
     }
 
@@ -63,17 +57,39 @@ class GameView: MTKView {
         let vertexFunction = library?.makeFunction(name: "basic_vertex_shader")
         let fragmentFunction = library?.makeFunction(name: "basic_fragment_shader")
 
+        let vertexDescriptor = makeVertexDescriptor()
+
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
 
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = colorPixelFormat
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
+        renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
 
         do {
             try renderPipelineState = device?.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             logger.error("Error creating render pipeline state: \(error.localizedDescription)")
         }
+    }
+
+    private func makeVertexDescriptor() -> MTLVertexDescriptor {
+
+        let vertexDescriptor = MTLVertexDescriptor()
+
+        // Position
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].offset = 0
+
+        // Color
+        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].offset = SIMD3<Float>.size()
+
+        vertexDescriptor.layouts[0].stride = Vertex.stride()
+
+        return vertexDescriptor
     }
 
     override func draw(_ dirtyRect: NSRect) {

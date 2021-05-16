@@ -10,8 +10,8 @@ using namespace metal;
 
 struct VertexIn {
 
-    float3 position;
-    float4 color;
+    float3 position [[ attribute(0) ]];
+    float4 color [[ attribute(1) ]];
 };
 
 struct RasterizerData {
@@ -20,10 +20,9 @@ struct RasterizerData {
     float4 color;
 };
 
-vertex RasterizerData basic_vertex_shader(device VertexIn *vertices [[ buffer(0) ]],
-                                  uint vertexID [[ vertex_id ]]) {
+vertex RasterizerData basic_vertex_shader(const VertexIn vIn [[ stage_in ]]) {
 
-    return { .position = float4(vertices[vertexID].position, 1), .color = float4(vertices[vertexID].color) };
+    return { .position = float4(vIn.position, 1), .color = float4(vIn.color) };
 }
 
 fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]]) {
