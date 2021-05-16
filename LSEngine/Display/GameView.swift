@@ -14,8 +14,6 @@ class GameView: MTKView {
 
     private let logger = Logger()
 
-    var renderPipelineState: MTLRenderPipelineState!
-
     private let vertices: [Vertex] = [
         .init(position: SIMD3<Float>(0, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
         .init(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
@@ -35,8 +33,6 @@ class GameView: MTKView {
         clearColor = Preferences.shared.clearColor
 
         colorPixelFormat = Preferences.shared.mainPixelFormat
-
-        renderPipelineState = RenderPipelineStateLibrary.shared.renderPipelineState(.basic)
 
         makeBuffers()
     }
@@ -58,7 +54,7 @@ class GameView: MTKView {
 
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
 
-        renderCommandEncoder?.setRenderPipelineState(renderPipelineState)
+        renderCommandEncoder?.setRenderPipelineState(RenderPipelineStateLibrary.shared.renderPipelineState(.basic))
 
         renderCommandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)

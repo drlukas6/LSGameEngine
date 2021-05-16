@@ -12,7 +12,7 @@ protocol Shader {
     var name: String { get }
     var functionName: String { get }
 
-    func function(from library: MTLLibrary) -> MTLFunction
+    var function: MTLFunction { get }
 }
 
 struct BasicVertexShader: Shader {
@@ -20,13 +20,13 @@ struct BasicVertexShader: Shader {
     let name = "Basic Vertex Shader"
     let functionName = "basic_vertex_shader"
 
-    func function(from library: MTLLibrary) -> MTLFunction {
+    let function: MTLFunction
 
-        let function = library.makeFunction(name: functionName)!
+    init(library: MTLLibrary) {
+
+        function = library.makeFunction(name: functionName)!
 
         function.label = name
-
-        return function
     }
 }
 
@@ -35,13 +35,13 @@ struct BasicFragmentShader: Shader {
     let name = "Basic Fragment Shader"
     let functionName = "basic_fragment_shader"
 
-    func function(from library: MTLLibrary) -> MTLFunction {
+    let function: MTLFunction
 
-        let function = library.makeFunction(name: functionName)!
+    init(library: MTLLibrary) {
+
+        function = library.makeFunction(name: functionName)!
 
         function.label = name
-
-        return function
     }
 }
 
@@ -73,15 +73,15 @@ class ShaderLibrary {
 
     private func makeDefaultShaders() {
 
-        vertexShaders[.basic] = BasicVertexShader()
-        fragmentShaders[.basic] = BasicFragmentShader()
+        vertexShaders[.basic] = BasicVertexShader(library: library)
+        fragmentShaders[.basic] = BasicFragmentShader(library: library)
     }
 
     func vertexFunction(_ type: VertexShader) -> MTLFunction {
-        vertexShaders[type]!.function(from: library)
+        vertexShaders[type]!.function
     }
 
     func fragmentFunction(_ type: FragmentShader) -> MTLFunction {
-        fragmentShaders[type]!.function(from: library)
+        fragmentShaders[type]!.function
     }
 }
