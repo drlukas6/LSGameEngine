@@ -16,6 +16,10 @@
 		2F6EE7C22651298600397AC9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7C12651298600397AC9 /* GameView.swift */; };
 		2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7C326512D7600397AC9 /* LSShader.metal */; };
 		2F6EE7C62651486500397AC9 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7C52651486500397AC9 /* Types.swift */; };
+		2F6EE7CC26514DA100397AC9 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7CB26514DA100397AC9 /* Engine.swift */; };
+		2F6EE7CE26514E6400397AC9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7CD26514E6400397AC9 /* Preferences.swift */; };
+		2F6EE7D02651500000397AC9 /* ShaderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7CF2651500000397AC9 /* ShaderLibrary.swift */; };
+		2F6EE7D22651568900397AC9 /* VertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		2F6EE7C12651298600397AC9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		2F6EE7C326512D7600397AC9 /* LSShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LSShader.metal; sourceTree = "<group>"; };
 		2F6EE7C52651486500397AC9 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		2F6EE7CB26514DA100397AC9 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		2F6EE7CD26514E6400397AC9 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		2F6EE7CF2651500000397AC9 /* ShaderLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderLibrary.swift; sourceTree = "<group>"; };
+		2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +110,11 @@
 		2F6EE790265126F900397AC9 /* LSEngine */ = {
 			isa = PBXGroup;
 			children = (
+				2F6EE7C726514B5900397AC9 /* Core */,
+				2F6EE7C826514B5E00397AC9 /* Libraries */,
+				2F6EE7C926514B6300397AC9 /* Shaders */,
+				2F6EE7CA26514B6900397AC9 /* Display */,
 				2F6EE7C02651286100397AC9 /* App */,
-				2F6EE79A265126FA00397AC9 /* Main.storyboard */,
-				2F6EE7C12651298600397AC9 /* GameView.swift */,
-				2F6EE7C326512D7600397AC9 /* LSShader.metal */,
-				2F6EE7C52651486500397AC9 /* Types.swift */,
 			);
 			path = LSEngine;
 			sourceTree = "<group>";
@@ -139,6 +147,42 @@
 				2F6EE795265126F900397AC9 /* LSEngine.xcdatamodeld */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		2F6EE7C726514B5900397AC9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7C52651486500397AC9 /* Types.swift */,
+				2F6EE7CB26514DA100397AC9 /* Engine.swift */,
+				2F6EE7CD26514E6400397AC9 /* Preferences.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2F6EE7C826514B5E00397AC9 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7CF2651500000397AC9 /* ShaderLibrary.swift */,
+				2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		2F6EE7C926514B6300397AC9 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7C326512D7600397AC9 /* LSShader.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		2F6EE7CA26514B6900397AC9 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7C12651298600397AC9 /* GameView.swift */,
+				2F6EE79A265126FA00397AC9 /* Main.storyboard */,
+			);
+			path = Display;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6EE7D22651568900397AC9 /* VertexDescriptorLibrary.swift in Sources */,
 				2F6EE797265126F900397AC9 /* LSEngine.xcdatamodeld in Sources */,
+				2F6EE7CE26514E6400397AC9 /* Preferences.swift in Sources */,
+				2F6EE7D02651500000397AC9 /* ShaderLibrary.swift in Sources */,
+				2F6EE7CC26514DA100397AC9 /* Engine.swift in Sources */,
 				2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */,
 				2F6EE7C22651298600397AC9 /* GameView.swift in Sources */,
 				2F6EE7C62651486500397AC9 /* Types.swift in Sources */,

@@ -15,6 +15,14 @@ protocol Sizeable {
 
 extension Sizeable {
 
+    static var size: Int {
+        Self.size(of: 1)
+    }
+
+    static var stride: Int {
+        Self.stride(of: 1)
+    }
+
     static func size(of count: Int = 1) -> Int {
         MemoryLayout<Self>.size * count
     }
@@ -24,7 +32,7 @@ extension Sizeable {
     }
 }
 
-extension SIMD3: Sizeable where ArrayLiteralElement == Float {}
+extension SIMD3: Sizeable {}
 
 struct Vertex: Sizeable {
 

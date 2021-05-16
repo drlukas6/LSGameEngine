@@ -14,8 +14,6 @@ class GameView: MTKView {
 
     private let logger = Logger()
 
-    var commandQueue: MTLCommandQueue!
-
     var renderPipelineState: MTLRenderPipelineState!
 
     private let vertices: [Vertex] = [
@@ -32,11 +30,11 @@ class GameView: MTKView {
 
         device = MTLCreateSystemDefaultDevice()
 
-        clearColor = MTLClearColor(red: 0.43, green: 0.73, blue: 0.35, alpha: 1)
+        Engine.shared.ignite(with: device!)
 
-        colorPixelFormat = .bgra8Unorm
+        clearColor = Preferences.shared.clearColor
 
-        commandQueue = device?.makeCommandQueue()
+        colorPixelFormat = Preferences.shared.mainPixelFormat
 
         makeRenderPipelineState()
 
@@ -45,51 +43,25 @@ class GameView: MTKView {
 
     private func makeBuffers() {
 
-        vertexBuffer = device?.makeBuffer(bytes: vertices,
+        vertexBuffer = Engine.shared.device.makeBuffer(bytes: vertices,
                                           length: Vertex.stride(of: vertices.count),
                                           options: [])
     }
 
     private func makeRenderPipelineState() {
 
-        let library = device?.makeDefaultLibrary()
-
-        let vertexFunction = library?.makeFunction(name: "basic_vertex_shader")
-        let fragmentFunction = library?.makeFunction(name: "basic_fragment_shader")
-
-        let vertexDescriptor = makeVertexDescriptor()
-
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
 
-        renderPipelineDescriptor.colorAttachments[0].pixelFormat = colorPixelFormat
-        renderPipelineDescriptor.vertexFunction = vertexFunction
-        renderPipelineDescriptor.fragmentFunction = fragmentFunction
-        renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.shared.mainPixelFormat
+        renderPipelineDescriptor.vertexFunction = ShaderLibrary.shared.vertexFunction(.basic)
+        renderPipelineDescriptor.fragmentFunction = ShaderLibrary.shared.fragmentFunction(.basic)
+        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.shared.vertexDescriptor(.basic)
 
         do {
-            try renderPipelineState = device?.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+            try renderPipelineState = Engine.shared.device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             logger.error("Error creating render pipeline state: \(error.localizedDescription)")
         }
-    }
-
-    private func makeVertexDescriptor() -> MTLVertexDescriptor {
-
-        let vertexDescriptor = MTLVertexDescriptor()
-
-        // Position
-        vertexDescriptor.attributes[0].format = .float3
-        vertexDescriptor.attributes[0].bufferIndex = 0
-        vertexDescriptor.attributes[0].offset = 0
-
-        // Color
-        vertexDescriptor.attributes[1].format = .float4
-        vertexDescriptor.attributes[1].bufferIndex = 0
-        vertexDescriptor.attributes[1].offset = SIMD3<Float>.size()
-
-        vertexDescriptor.layouts[0].stride = Vertex.stride()
-
-        return vertexDescriptor
     }
 
     override func draw(_ dirtyRect: NSRect) {
@@ -98,7 +70,7 @@ class GameView: MTKView {
             return
         }
 
-        let commandBuffer = commandQueue.makeCommandBuffer()
+        let commandBuffer = Engine.shared.commandQueue.makeCommandBuffer()
 
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
 
