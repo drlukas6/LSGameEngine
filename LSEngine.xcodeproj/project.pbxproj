@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F6EE792265126F900397AC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE791265126F900397AC9 /* AppDelegate.swift */; };
-		2F6EE794265126F900397AC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE793265126F900397AC9 /* ViewController.swift */; };
 		2F6EE797265126F900397AC9 /* LSEngine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE795265126F900397AC9 /* LSEngine.xcdatamodeld */; };
 		2F6EE799265126FA00397AC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6EE798265126FA00397AC9 /* Assets.xcassets */; };
 		2F6EE79C265126FA00397AC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6EE79A265126FA00397AC9 /* Main.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		2F6EE78E265126F900397AC9 /* LSEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6EE791265126F900397AC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F6EE793265126F900397AC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F6EE796265126F900397AC9 /* LSEngine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LSEngine.xcdatamodel; sourceTree = "<group>"; };
 		2F6EE798265126FA00397AC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F6EE79B265126FA00397AC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,13 +96,8 @@
 		2F6EE790265126F900397AC9 /* LSEngine */ = {
 			isa = PBXGroup;
 			children = (
-				2F6EE791265126F900397AC9 /* AppDelegate.swift */,
-				2F6EE793265126F900397AC9 /* ViewController.swift */,
-				2F6EE798265126FA00397AC9 /* Assets.xcassets */,
+				2F6EE7C02651286100397AC9 /* App */,
 				2F6EE79A265126FA00397AC9 /* Main.storyboard */,
-				2F6EE79D265126FA00397AC9 /* Info.plist */,
-				2F6EE79E265126FA00397AC9 /* LSEngine.entitlements */,
-				2F6EE795265126F900397AC9 /* LSEngine.xcdatamodeld */,
 			);
 			path = LSEngine;
 			sourceTree = "<group>";
@@ -125,6 +118,18 @@
 				2F6EE7B4265126FA00397AC9 /* Info.plist */,
 			);
 			path = LSEngineUITests;
+			sourceTree = "<group>";
+		};
+		2F6EE7C02651286100397AC9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE791265126F900397AC9 /* AppDelegate.swift */,
+				2F6EE798265126FA00397AC9 /* Assets.xcassets */,
+				2F6EE79D265126FA00397AC9 /* Info.plist */,
+				2F6EE79E265126FA00397AC9 /* LSEngine.entitlements */,
+				2F6EE795265126F900397AC9 /* LSEngine.xcdatamodeld */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F6EE794265126F900397AC9 /* ViewController.swift in Sources */,
 				2F6EE797265126F900397AC9 /* LSEngine.xcdatamodeld in Sources */,
 				2F6EE792265126F900397AC9 /* AppDelegate.swift in Sources */,
 			);
@@ -425,12 +429,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LSEngine/LSEngine.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LSEngine/App/LSEngine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22AZG63582;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = LSEngine/Info.plist;
+				INFOPLIST_FILE = LSEngine/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -446,12 +450,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LSEngine/LSEngine.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LSEngine/App/LSEngine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22AZG63582;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = LSEngine/Info.plist;
+				INFOPLIST_FILE = LSEngine/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
