@@ -23,6 +23,10 @@ class Engine {
         self.commandQueue = self.device.makeCommandQueue()
 
         ShaderLibrary.shared.setup(with: self.device.makeDefaultLibrary()!)
+
         VertexDescriptorLibrary.shared.setup()
+        RenderPipelineDescriptorLibrary.shared.setup()
+
+        RenderPipelineStateLibrary.shared.setup()
     }
 }

@@ -20,6 +20,8 @@
 		2F6EE7CE26514E6400397AC9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7CD26514E6400397AC9 /* Preferences.swift */; };
 		2F6EE7D02651500000397AC9 /* ShaderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7CF2651500000397AC9 /* ShaderLibrary.swift */; };
 		2F6EE7D22651568900397AC9 /* VertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */; };
+		2F6EE7D42651585300397AC9 /* RenderPipelineDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D32651585300397AC9 /* RenderPipelineDescriptorLibrary.swift */; };
+		2F6EE7D626515A2F00397AC9 /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D526515A2F00397AC9 /* RenderPipelineStateLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		2F6EE7CD26514E6400397AC9 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		2F6EE7CF2651500000397AC9 /* ShaderLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderLibrary.swift; sourceTree = "<group>"; };
 		2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptorLibrary.swift; sourceTree = "<group>"; };
+		2F6EE7D32651585300397AC9 /* RenderPipelineDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorLibrary.swift; sourceTree = "<group>"; };
+		2F6EE7D526515A2F00397AC9 /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 			children = (
 				2F6EE7CF2651500000397AC9 /* ShaderLibrary.swift */,
 				2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */,
+				2F6EE7D32651585300397AC9 /* RenderPipelineDescriptorLibrary.swift */,
+				2F6EE7D526515A2F00397AC9 /* RenderPipelineStateLibrary.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6EE7D42651585300397AC9 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				2F6EE7D22651568900397AC9 /* VertexDescriptorLibrary.swift in Sources */,
 				2F6EE797265126F900397AC9 /* LSEngine.xcdatamodeld in Sources */,
 				2F6EE7CE26514E6400397AC9 /* Preferences.swift in Sources */,
@@ -323,6 +330,7 @@
 				2F6EE7C22651298600397AC9 /* GameView.swift in Sources */,
 				2F6EE7C62651486500397AC9 /* Types.swift in Sources */,
 				2F6EE792265126F900397AC9 /* AppDelegate.swift in Sources */,
+				2F6EE7D626515A2F00397AC9 /* RenderPipelineStateLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

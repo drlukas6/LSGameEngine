@@ -36,7 +36,7 @@ class GameView: MTKView {
 
         colorPixelFormat = Preferences.shared.mainPixelFormat
 
-        makeRenderPipelineState()
+        renderPipelineState = RenderPipelineStateLibrary.shared.renderPipelineState(.basic)
 
         makeBuffers()
     }
@@ -46,22 +46,6 @@ class GameView: MTKView {
         vertexBuffer = Engine.shared.device.makeBuffer(bytes: vertices,
                                           length: Vertex.stride(of: vertices.count),
                                           options: [])
-    }
-
-    private func makeRenderPipelineState() {
-
-        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
-
-        renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.shared.mainPixelFormat
-        renderPipelineDescriptor.vertexFunction = ShaderLibrary.shared.vertexFunction(.basic)
-        renderPipelineDescriptor.fragmentFunction = ShaderLibrary.shared.fragmentFunction(.basic)
-        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.shared.vertexDescriptor(.basic)
-
-        do {
-            try renderPipelineState = Engine.shared.device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
-        } catch {
-            logger.error("Error creating render pipeline state: \(error.localizedDescription)")
-        }
     }
 
     override func draw(_ dirtyRect: NSRect) {
