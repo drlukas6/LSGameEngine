@@ -20,9 +20,14 @@ struct RasterizerData {
     float4 color;
 };
 
-vertex RasterizerData basic_vertex_shader(const VertexIn vIn [[ stage_in ]]) {
+vertex RasterizerData basic_vertex_shader(const VertexIn vIn [[ stage_in ]],
+                                          constant float &deltaPosition [[ buffer(1) ]]) {
 
-    return { .position = float4(vIn.position, 1), .color = float4(vIn.color) };
+    RasterizerData rd = { .position = float4(vIn.position, 1), .color = float4(vIn.color) };
+
+    rd.position.x += deltaPosition;
+
+    return rd;
 }
 
 fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]]) {

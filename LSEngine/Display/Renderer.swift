@@ -9,7 +9,8 @@ import MetalKit
 
 class Renderer: NSObject {
 
-    let nodes: [Node] = [Player()]
+//    let nodes: [Node] = [Player()]
+    let player = Player()
 }
 
 extension Renderer: MTKViewDelegate {
@@ -27,10 +28,13 @@ extension Renderer: MTKViewDelegate {
         let commandBuffer = Engine.shared.commandQueue.makeCommandBuffer()
 
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+//
+//        for node in nodes {
+//            node.render(encoder: renderCommandEncoder!)
+//        }
 
-        for node in nodes {
-            node.render(encoder: renderCommandEncoder!)
-        }
+        player.update(withDelta: 1 / Float(view.preferredFramesPerSecond))
+        player.render(encoder: renderCommandEncoder!)
 
         renderCommandEncoder?.endEncoding()
 

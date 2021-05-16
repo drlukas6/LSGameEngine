@@ -33,6 +33,7 @@ extension Sizeable {
 }
 
 extension SIMD3: Sizeable {}
+extension Float: Sizeable{}
 
 struct Vertex: Sizeable {
 
