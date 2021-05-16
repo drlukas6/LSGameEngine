@@ -24,6 +24,10 @@ class GameObject: Node, Renderable {
         time += deltaTime
 
         position.x = cos(time)
+        position.y = sin(time)
+
+        scale = .init(repeating: cos(time))
+        rotation.z = cos(time)
 
         updateModelConstants()
     }

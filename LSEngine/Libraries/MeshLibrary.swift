@@ -50,13 +50,13 @@ class Quad: CustomMesh {
     override func createVertices() {
 
         vertices = [
-            .init(position: SIMD3<Float>(0.5, 0.5, 0), color: SIMD4<Float>(1, 0, 0, 1)),
-            .init(position: SIMD3<Float>(-0.5, 0.5, 0), color: SIMD4<Float>(0, 1, 0, 1)),
-            .init(position: SIMD3<Float>(-0.5, -0.5, 0), color: SIMD4<Float>(0, 0, 1, 1)),
+            .init(position: SIMD3<Float>(1, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
+            .init(position: SIMD3<Float>(-1, 1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
+            .init(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1)),
 
-            .init(position: SIMD3<Float>(0.5, 0.5, 0), color: SIMD4<Float>(1, 0, 0, 1)),
-            .init(position: SIMD3<Float>(-0.5, -0.5, 0), color: SIMD4<Float>(0, 0, 1, 1)),
-            .init(position: SIMD3<Float>(0.5, -0.5, 0), color: SIMD4<Float>(0, 1, 0, 1)),
+            .init(position: SIMD3<Float>(1, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
+            .init(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1)),
+            .init(position: SIMD3<Float>(1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
         ]
     }
 }
