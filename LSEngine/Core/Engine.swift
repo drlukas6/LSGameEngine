@@ -28,5 +28,7 @@ class Engine {
         RenderPipelineDescriptorLibrary.shared.setup()
 
         RenderPipelineStateLibrary.shared.setup()
+
+        MeshLibrary.shared.setup()
     }
 }

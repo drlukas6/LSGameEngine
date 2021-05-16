@@ -13,7 +13,7 @@ class GameView: MTKView {
 
     private let logger = Logger()
 
-    private let renderer = Renderer()
+    private var renderer: Renderer!
 
     required init(coder: NSCoder) {
 
@@ -26,6 +26,8 @@ class GameView: MTKView {
         clearColor = Preferences.shared.clearColor
 
         colorPixelFormat = Preferences.shared.mainPixelFormat
+
+        renderer = Renderer()
 
         delegate = renderer
     }

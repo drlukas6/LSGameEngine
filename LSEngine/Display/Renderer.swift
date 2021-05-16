@@ -8,6 +8,8 @@
 import MetalKit
 
 class Renderer: NSObject {
+
+    let nodes: [Node] = [Player()]
 }
 
 extension Renderer: MTKViewDelegate {
@@ -26,7 +28,9 @@ extension Renderer: MTKViewDelegate {
 
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
 
-        Triangle().render(with: renderCommandEncoder!)
+        for node in nodes {
+            node.render(encoder: renderCommandEncoder!)
+        }
 
         renderCommandEncoder?.endEncoding()
 
