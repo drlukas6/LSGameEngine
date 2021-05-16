@@ -20,12 +20,17 @@ struct RasterizerData {
     float4 color;
 };
 
+struct ModelConstants {
+
+    float4x4 modelMatrix;
+};
+
 vertex RasterizerData basic_vertex_shader(const VertexIn vIn [[ stage_in ]],
-                                          constant float &deltaPosition [[ buffer(1) ]]) {
+                                          constant ModelConstants &modelConstants [[ buffer(1) ]]) {
 
-    RasterizerData rd = { .position = float4(vIn.position, 1), .color = float4(vIn.color) };
-
-    rd.position.x += deltaPosition;
+    RasterizerData rd = { .position = modelConstants.modelMatrix * float4(vIn.position, 1),
+                          .color = float4(vIn.color)
+                        };
 
     return rd;
 }

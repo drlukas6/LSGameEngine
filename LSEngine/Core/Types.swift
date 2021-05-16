@@ -40,3 +40,8 @@ struct Vertex: Sizeable {
     let position: SIMD3<Float>
     let color: SIMD4<Float>
 }
+
+struct ModelConstants: Sizeable {
+
+    var modelMatrix = matrix_identity_float4x4
+}

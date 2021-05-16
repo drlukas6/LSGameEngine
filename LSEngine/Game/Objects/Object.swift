@@ -9,9 +9,9 @@ import MetalKit
 
 class GameObject: Node, Renderable {
 
-    let mesh: Mesh
+    var modelConstants = ModelConstants()
 
-    var deltaPosition = Float(0)
+    let mesh: Mesh
 
     init(mesh: MeshLibrary.MeshType) {
 
@@ -23,12 +23,19 @@ class GameObject: Node, Renderable {
 
         time += deltaTime
 
-        deltaPosition = cos(time )
+        position.x = cos(time)
+
+        updateModelConstants()
+    }
+
+    private func updateModelConstants() {
+
+        modelConstants.modelMatrix = modelMatrix
     }
 
     func render(with encoder: MTLRenderCommandEncoder) {
 
-        encoder.setVertexBytes(&deltaPosition, length: Float.stride, index: 1)
+        encoder.setVertexBytes(&modelConstants, length: ModelConstants.stride, index: 1)
 
         encoder.setRenderPipelineState(RenderPipelineStateLibrary.shared.renderPipelineState(.basic))
 
