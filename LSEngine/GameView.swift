@@ -8,6 +8,7 @@
 import Cocoa
 import MetalKit
 import os.log
+import simd
 
 class GameView: MTKView {
 
@@ -16,6 +17,14 @@ class GameView: MTKView {
     var commandQueue: MTLCommandQueue!
 
     var renderPipelineState: MTLRenderPipelineState!
+
+    private let vertices = [
+        SIMD3<Float>(0, 1, 0),
+        SIMD3<Float>(-1, -1, 0),
+        SIMD3<Float>(1, -1, 0)
+    ]
+
+    private var vertexBuffer: MTLBuffer!
 
     required init(coder: NSCoder) {
 
@@ -30,6 +39,15 @@ class GameView: MTKView {
         commandQueue = device?.makeCommandQueue()
 
         makeRenderPipelineState()
+
+        makeBuffers()
+    }
+
+    private func makeBuffers() {
+
+        vertexBuffer = device?.makeBuffer(bytes: vertices,
+                                          length: MemoryLayout<SIMD3<Float>>.stride * vertices.count,
+                                          options: [])
     }
 
     private func makeRenderPipelineState() {
@@ -64,7 +82,8 @@ class GameView: MTKView {
 
         renderCommandEncoder?.setRenderPipelineState(renderPipelineState)
 
-        // Send info to rendercommandecnoder
+        renderCommandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
 
         renderCommandEncoder?.endEncoding()
 
