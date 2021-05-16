@@ -22,6 +22,7 @@
 		2F6EE7D22651568900397AC9 /* VertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */; };
 		2F6EE7D42651585300397AC9 /* RenderPipelineDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D32651585300397AC9 /* RenderPipelineDescriptorLibrary.swift */; };
 		2F6EE7D626515A2F00397AC9 /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D526515A2F00397AC9 /* RenderPipelineStateLibrary.swift */; };
+		2F6EE7D926515E5700397AC9 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7D826515E5700397AC9 /* Object.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		2F6EE7D12651568900397AC9 /* VertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 		2F6EE7D32651585300397AC9 /* RenderPipelineDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorLibrary.swift; sourceTree = "<group>"; };
 		2F6EE7D526515A2F00397AC9 /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
+		2F6EE7D826515E5700397AC9 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		2F6EE790265126F900397AC9 /* LSEngine */ = {
 			isa = PBXGroup;
 			children = (
+				2F6EE7D726515E4500397AC9 /* Game */,
 				2F6EE7C726514B5900397AC9 /* Core */,
 				2F6EE7C826514B5E00397AC9 /* Libraries */,
 				2F6EE7C926514B6300397AC9 /* Shaders */,
@@ -189,6 +192,14 @@
 				2F6EE79A265126FA00397AC9 /* Main.storyboard */,
 			);
 			path = Display;
+			sourceTree = "<group>";
+		};
+		2F6EE7D726515E4500397AC9 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7D826515E5700397AC9 /* Object.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				2F6EE7CC26514DA100397AC9 /* Engine.swift in Sources */,
 				2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */,
 				2F6EE7C22651298600397AC9 /* GameView.swift in Sources */,
+				2F6EE7D926515E5700397AC9 /* Object.swift in Sources */,
 				2F6EE7C62651486500397AC9 /* Types.swift in Sources */,
 				2F6EE792265126F900397AC9 /* AppDelegate.swift in Sources */,
 				2F6EE7D626515A2F00397AC9 /* RenderPipelineStateLibrary.swift in Sources */,

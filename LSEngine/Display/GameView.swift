@@ -8,19 +8,10 @@
 import Cocoa
 import MetalKit
 import os.log
-import simd
 
 class GameView: MTKView {
 
     private let logger = Logger()
-
-    private let vertices: [Vertex] = [
-        .init(position: SIMD3<Float>(0, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
-        .init(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
-        .init(position: SIMD3<Float>(1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1)),
-    ]
-
-    private var vertexBuffer: MTLBuffer!
 
     required init(coder: NSCoder) {
 
@@ -34,14 +25,6 @@ class GameView: MTKView {
 
         colorPixelFormat = Preferences.shared.mainPixelFormat
 
-        makeBuffers()
-    }
-
-    private func makeBuffers() {
-
-        vertexBuffer = Engine.shared.device.makeBuffer(bytes: vertices,
-                                          length: Vertex.stride(of: vertices.count),
-                                          options: [])
     }
 
     override func draw(_ dirtyRect: NSRect) {
@@ -54,10 +37,7 @@ class GameView: MTKView {
 
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
 
-        renderCommandEncoder?.setRenderPipelineState(RenderPipelineStateLibrary.shared.renderPipelineState(.basic))
-
-        renderCommandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderCommandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
+        Triangle().render(with: renderCommandEncoder!)
 
         renderCommandEncoder?.endEncoding()
 
