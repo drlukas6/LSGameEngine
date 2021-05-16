@@ -10,6 +10,12 @@ import MetalKit
 import os.log
 import simd
 
+struct Vertex {
+
+    let position: SIMD3<Float>
+    let color: SIMD4<Float>
+}
+
 class GameView: MTKView {
 
     private let logger = Logger()
@@ -18,10 +24,10 @@ class GameView: MTKView {
 
     var renderPipelineState: MTLRenderPipelineState!
 
-    private let vertices = [
-        SIMD3<Float>(0, 1, 0),
-        SIMD3<Float>(-1, -1, 0),
-        SIMD3<Float>(1, -1, 0)
+    private let vertices: [Vertex] = [
+        .init(position: SIMD3<Float>(0, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
+        .init(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
+        .init(position: SIMD3<Float>(1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1)),
     ]
 
     private var vertexBuffer: MTLBuffer!
@@ -46,7 +52,7 @@ class GameView: MTKView {
     private func makeBuffers() {
 
         vertexBuffer = device?.makeBuffer(bytes: vertices,
-                                          length: MemoryLayout<SIMD3<Float>>.stride * vertices.count,
+                                          length: MemoryLayout<Vertex>.stride * vertices.count,
                                           options: [])
     }
 
