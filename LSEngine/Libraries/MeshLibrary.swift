@@ -24,9 +24,7 @@ class CustomMesh: Mesh {
 
         createVertices()
 
-        vertexBuffer = Engine.shared.device.makeBuffer(bytes: vertices,
-                                                       length: Vertex.stride(of: vertices.count),
-                                                       options: [])!
+        vertexBuffer = Engine.shared.device.makeBuffer(bytes: vertices, length: Vertex.stride(of: vertices.count), options: [])!
         vertexCount = vertices.count
     }
 

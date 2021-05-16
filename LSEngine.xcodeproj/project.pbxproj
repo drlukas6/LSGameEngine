@@ -29,6 +29,8 @@
 		2F6EE7E126516C0100397AC9 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7E026516C0100397AC9 /* Node.swift */; };
 		2F6EE7E426516CFB00397AC9 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7E326516CFB00397AC9 /* Renderable.swift */; };
 		2F6EE7E826519D1100397AC9 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7E726519D1100397AC9 /* Math.swift */; };
+		2F6EE7EB2651A75400397AC9 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7EA2651A75400397AC9 /* Scene.swift */; };
+		2F6EE7ED2651A91400397AC9 /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		2F6EE7E026516C0100397AC9 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		2F6EE7E326516CFB00397AC9 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		2F6EE7E726519D1100397AC9 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		2F6EE7EA2651A75400397AC9 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		2F6EE7D726515E4500397AC9 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				2F6EE7E92651A74300397AC9 /* Scenes */,
 				2F6EE7E526516DB600397AC9 /* Objects */,
 				2F6EE7E226516CF400397AC9 /* Protocols */,
 				2F6EE7E026516C0100397AC9 /* Node.swift */,
@@ -242,6 +247,15 @@
 				2F6EE7E726519D1100397AC9 /* Math.swift */,
 			);
 			path = Math;
+			sourceTree = "<group>";
+		};
+		2F6EE7E92651A74300397AC9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7EA2651A75400397AC9 /* Scene.swift */,
+				2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +390,7 @@
 				2F6EE7E426516CFB00397AC9 /* Renderable.swift in Sources */,
 				2F6EE7D42651585300397AC9 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				2F6EE7D22651568900397AC9 /* VertexDescriptorLibrary.swift in Sources */,
+				2F6EE7EB2651A75400397AC9 /* Scene.swift in Sources */,
 				2F6EE797265126F900397AC9 /* LSEngine.xcdatamodeld in Sources */,
 				2F6EE7CE26514E6400397AC9 /* Preferences.swift in Sources */,
 				2F6EE7DD2651688000397AC9 /* MeshLibrary.swift in Sources */,
@@ -390,6 +405,7 @@
 				2F6EE7C62651486500397AC9 /* Types.swift in Sources */,
 				2F6EE792265126F900397AC9 /* AppDelegate.swift in Sources */,
 				2F6EE7DF26516ABC00397AC9 /* Player.swift in Sources */,
+				2F6EE7ED2651A91400397AC9 /* SandboxScene.swift in Sources */,
 				2F6EE7D626515A2F00397AC9 /* RenderPipelineStateLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

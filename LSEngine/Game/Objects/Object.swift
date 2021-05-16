@@ -19,7 +19,8 @@ class GameObject: Node, Renderable {
     }
 
     var time = Float(0)
-    func update(withDelta deltaTime: Float) {
+
+    override func update(deltaTime: Float) {
 
         time += deltaTime
 

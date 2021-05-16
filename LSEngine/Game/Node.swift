@@ -9,6 +9,8 @@ import MetalKit
 
 class Node {
 
+    var children = [Node]()
+
     var position = SIMD3<Float>(repeating: 0)
     var scale = SIMD3<Float>(repeating: 1)
     var rotation = SIMD3<Float>(repeating: 0)
@@ -28,13 +30,28 @@ class Node {
         return modelMatrix
     }
 
+    func update(deltaTime: Float) {
+
+        for child in children {
+            child.update(deltaTime: deltaTime)
+        }
+    }
+
 
     func render(encoder: MTLRenderCommandEncoder) {
+
+        for child in children {
+            child.render(encoder: encoder)
+        }
 
         guard let renderable = self as? Renderable else {
             return
         }
 
         renderable.render(with: encoder)
+    }
+
+    func add(child: Node) {
+        children.append(child)
     }
 }
