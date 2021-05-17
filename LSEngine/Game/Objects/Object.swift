@@ -18,18 +18,7 @@ class GameObject: Node, Renderable {
         self.mesh = MeshLibrary.shared.mesh(mesh)
     }
 
-    var time = Float(0)
-
     override func update(deltaTime: Float) {
-
-        time += deltaTime
-
-        position.x = cos(time)
-        position.y = sin(time)
-
-        scale = .init(repeating: cos(time))
-        rotation.z = cos(time)
-
         updateModelConstants()
     }
 

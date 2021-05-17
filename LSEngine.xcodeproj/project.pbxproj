@@ -31,6 +31,7 @@
 		2F6EE7E826519D1100397AC9 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7E726519D1100397AC9 /* Math.swift */; };
 		2F6EE7EB2651A75400397AC9 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7EA2651A75400397AC9 /* Scene.swift */; };
 		2F6EE7ED2651A91400397AC9 /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */; };
+		2F6EE7F32651AAB300397AC9 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7F22651AAB300397AC9 /* SceneManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		2F6EE7E726519D1100397AC9 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		2F6EE7EA2651A75400397AC9 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
+		2F6EE7F22651AAB300397AC9 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		2F6EE790265126F900397AC9 /* LSEngine */ = {
 			isa = PBXGroup;
 			children = (
+				2F6EE7F12651AAAE00397AC9 /* Managers */,
 				2F6EE7E626519D0300397AC9 /* Math */,
 				2F6EE7D726515E4500397AC9 /* Game */,
 				2F6EE7C726514B5900397AC9 /* Core */,
@@ -256,6 +259,14 @@
 				2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2F6EE7F12651AAAE00397AC9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7F22651AAB300397AC9 /* SceneManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +407,7 @@
 				2F6EE7DD2651688000397AC9 /* MeshLibrary.swift in Sources */,
 				2F6EE7D02651500000397AC9 /* ShaderLibrary.swift in Sources */,
 				2F6EE7DB2651619200397AC9 /* Renderer.swift in Sources */,
+				2F6EE7F32651AAB300397AC9 /* SceneManager.swift in Sources */,
 				2F6EE7CC26514DA100397AC9 /* Engine.swift in Sources */,
 				2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */,
 				2F6EE7C22651298600397AC9 /* GameView.swift in Sources */,

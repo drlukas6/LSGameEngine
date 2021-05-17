@@ -30,5 +30,7 @@ class Engine {
         RenderPipelineStateLibrary.shared.setup()
 
         MeshLibrary.shared.setup()
+
+        SceneManager.shared.setup(with: Preferences.shared.startingSceneType)
     }
 }

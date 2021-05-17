@@ -21,6 +21,8 @@ class Preferences {
 
     private init() {}
 
-    private(set) var clearColor = ClearColors.green
-    private(set) var mainPixelFormat = MTLPixelFormat.bgra8Unorm
+    let clearColor = ClearColors.green
+    let mainPixelFormat = MTLPixelFormat.bgra8Unorm
+
+    let startingSceneType = SceneManager.SceneType.sandbox
 }
