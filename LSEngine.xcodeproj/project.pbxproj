@@ -32,6 +32,8 @@
 		2F6EE7EB2651A75400397AC9 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7EA2651A75400397AC9 /* Scene.swift */; };
 		2F6EE7ED2651A91400397AC9 /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */; };
 		2F6EE7F32651AAB300397AC9 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7F22651AAB300397AC9 /* SceneManager.swift */; };
+		2F6EE7F62652795700397AC9 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7F52652795700397AC9 /* Keyboard.swift */; };
+		2F6EE7F826527BA900397AC9 /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EE7F726527BA900397AC9 /* Mouse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		2F6EE7EA2651A75400397AC9 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		2F6EE7EC2651A91400397AC9 /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
 		2F6EE7F22651AAB300397AC9 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		2F6EE7F52652795700397AC9 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		2F6EE7F726527BA900397AC9 /* Mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		2F6EE7C726514B5900397AC9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2F6EE7F42652794E00397AC9 /* Input */,
 				2F6EE7C52651486500397AC9 /* Types.swift */,
 				2F6EE7CB26514DA100397AC9 /* Engine.swift */,
 				2F6EE7CD26514E6400397AC9 /* Preferences.swift */,
@@ -267,6 +272,15 @@
 				2F6EE7F22651AAB300397AC9 /* SceneManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		2F6EE7F42652794E00397AC9 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EE7F52652795700397AC9 /* Keyboard.swift */,
+				2F6EE7F726527BA900397AC9 /* Mouse.swift */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +426,7 @@
 				2F6EE7C426512D7600397AC9 /* LSShader.metal in Sources */,
 				2F6EE7C22651298600397AC9 /* GameView.swift in Sources */,
 				2F6EE7E826519D1100397AC9 /* Math.swift in Sources */,
+				2F6EE7F62652795700397AC9 /* Keyboard.swift in Sources */,
 				2F6EE7D926515E5700397AC9 /* Object.swift in Sources */,
 				2F6EE7E126516C0100397AC9 /* Node.swift in Sources */,
 				2F6EE7C62651486500397AC9 /* Types.swift in Sources */,
@@ -419,6 +434,7 @@
 				2F6EE7DF26516ABC00397AC9 /* Player.swift in Sources */,
 				2F6EE7ED2651A91400397AC9 /* SandboxScene.swift in Sources */,
 				2F6EE7D626515A2F00397AC9 /* RenderPipelineStateLibrary.swift in Sources */,
+				2F6EE7F826527BA900397AC9 /* Mouse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

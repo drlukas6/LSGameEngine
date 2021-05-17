@@ -26,8 +26,19 @@ class SandboxScene: Scene {
 
     override func update(deltaTime: Float) {
 
+        var xPosition = Float(0)
+
+        if (Keyboard.shared.isKeyPressed(key: .rightArrow)) {
+            xPosition += deltaTime
+        }
+
+        if (Keyboard.shared.isKeyPressed(key: .leftArrow)) {
+            xPosition -= deltaTime
+        }
+
         for child in children {
             child.rotation.z += 0.02
+            child.position.x += xPosition
         }
 
         super.update(deltaTime: deltaTime)
