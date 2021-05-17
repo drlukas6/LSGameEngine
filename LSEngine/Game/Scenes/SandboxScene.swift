@@ -11,7 +11,7 @@ class SandboxScene: Scene {
 
     override func buildScene() {
 
-        let count = 5
+        let count = 10
         for y in -count ..< count {
             for x in -count ..< count {
 
